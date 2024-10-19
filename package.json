@@ -1,8 +1,9 @@
 {
   "dependencies": {
     "@anthropic-ai/sdk": "^0.29.1",
-    "@langchain/core": "^0.3.12",
+    "@langchain/core": "^0.3.13",
     "@langchain/langgraph": "^0.2.15",
+    "@langchain/mongodb": "^0.1.0",
     "@langchain/ollama": "^0.1.0",
     "@langchain/openai": "^0.3.7",
     "axios": "^1.7.7",

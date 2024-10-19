@@ -1,0 +1,23 @@
+[
+  {
+    "informacion": "Usuario: John Doe - Correo: jd@gmail.com, Celular: 1234567890, Apartamento: 105, Rol: ADMIN."
+  },
+  {
+    "informacion": "Usuario: jhojan - Correo: espinosa@gmail.com, Celular: 3165085085, Apartamento: 513-B, Rol: RESIDENT."
+  },
+  {
+    "informacion": "Usuario: Jhuly - Correo: jh@gmail.com, Celular: 511981981, Apartamento: 101-B, Rol: RESIDENT."
+  },
+  {
+    "informacion": "Usuario: Laura Gamboa - Correo: lauragamboa@gmail.com, Celular: 365254545, Apartamento: 100-C, Rol: RESIDENT."
+  },
+  {
+    "informacion": "Usuario: Andrea Salazar - Correo: andrea@gmail.com, Celular: 7749937739, Apartamento: 110-A, Rol: RESIDENT."
+  },
+  {
+    "informacion": "Usuario: Andrés Solano Alegría - Correo: solano@gmail.com, Celular: 3004884038, Apartamento: 364-A, Rol: RESIDENT."
+  },
+  {
+    "informacion": "Usuario: Ronald Florez - Correo: ronald@gmail.com, Celular: 3002523652, Apartamento: 302-C, Rol: RESIDENT."
+  }
+]
