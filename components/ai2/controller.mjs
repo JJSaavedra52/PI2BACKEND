@@ -1,4 +1,5 @@
 // import { ChatOpenAI } from "@langchain/openai";
+import { getComplex } from "../complex/store.mjs";
 import * as dotenv from "dotenv";
 dotenv.config();
 // import { HumanMessage } from "@langchain/core/messages";
@@ -16,7 +17,7 @@ import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retr
 
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import { JSONLoader } from "langchain/document_loaders/fs/json";
-
+import mongoose from "mongoose";
 
 const loader = new DirectoryLoader(
   "./components/ai2/jsons", {
@@ -140,10 +141,23 @@ const chat_history = [];
 
 const queryAIModel = async (req, res) => {
   const { input } = req.body;
+  const { idComplex } = req.params;
+
+  if (!idComplex){
+    return { status: 400, message: 'ID is required'}
+  }
+// Validar si el ID es un ObjectId válido
+  if (!mongoose.Types.ObjectId.isValid(idComplex)) {
+      return res.status(400).json({ message: 'Invalid ID format' });
+  }
+  const complex = await getComplex(idComplex);
+  if (!complex) {
+      return { status: 404, message: 'Conjunto no encontrado' };
+  }
   try {
     const result = await conversationChain.invoke({
         chat_history: chat_history,
-        input: input,
+        input: "Soy el administrador del " + complex.name + " esta es mi consulta: \n" + input,
       });
     console.log(result);
     chat_history.push({

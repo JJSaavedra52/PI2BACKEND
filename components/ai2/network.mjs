@@ -6,7 +6,7 @@ const controller = {queryAIModel};
 
 const router = Router();
 
-router.post('/input', (req, res) => {
+router.post('/input/:idComplex', (req, res) => {
     controller.queryAIModel(req, res)
         .then(({ status, message }) => {
             success(res, message, status);
