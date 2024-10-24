@@ -157,7 +157,7 @@ const queryAIModel = async (req, res) => {
   try {
     const result = await conversationChain.invoke({
         chat_history: chat_history,
-        input: "Soy el administrador del " + complex.name + " esta es mi consulta: \n" + input,
+        input: "Soy el administrador del " + complex.name + " esta es mi consulta: " + input,
       });
     console.log(result);
     chat_history.push({
