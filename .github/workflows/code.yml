@@ -1,0 +1,34 @@
+name: Code workflow
+
+on:
+  push:
+    branches:
+      - main
+      - feat/tests
+  pull_request:
+    branches:
+      - main
+      - feat/tests
+
+jobs:
+  code-validation:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Review files
+      run: ls
+      
+    - name: Setup Node JS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+      continue-on-error: false
